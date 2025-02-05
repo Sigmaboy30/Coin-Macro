@@ -1,37 +1,59 @@
+SetTitleMatchMode, 2
 Esc::ExitApp
 
-IfWinActive ahk_exe chrome.exe		 ;checks for chrome being active
-{
+
+
 
 k::
 
 msgbox, Starting
 sleep 10000
 
-loop 1
+loop 
 {
 
-Send, !{tab} 	;switches tabs to the crypto
-sleep 1000
-Send,{PrintScreen}	;takes a screenshot of the market cap
-Sleep 3000	
-MouseClickDrag, left, 600, 600, -300, -300 ;cordinates of the screenshot (will be able to be changed in the future)
-Sleep 3000
-Send, !{tab} 	;changes back to sender or logs app
-Sleep 2000
-Send, ^v 	;pastes screenshot into logs or sender app
-Sleep 2000
-Send,{Enter}
-Sleep 1
- if (a_index = 1)
-break
+ IfWinExist, ahk_exe chrome.exe  
+    {
+	
+	 WinGetTitle, title, ahk_exe chrome.exe
+	 if InStr(title, "DEX")  
+        {
 
-}
-}
-else
-{
+	WinActivate, ahk_exe chrome.exe
+	
+	sleep 1000
+	Send,{PrintScreen}	;takes a screenshot of the market cap
+		Sleep 3000	
+	MouseClickDrag, left, 79, 241, 1352, -5 ;cordinates of the screenshot
+	Sleep 3000
+
+
+	WinActivate, ahk_exe ApplicationFrameHost.exe
+	Sleep 2000
+	Send, ^v 	;pastes screenshot into logs or sender app
+		Sleep 120000
+		Send,{Enter}
+		Sleep 1
+ 		if (a_index = 5)
+			break
+
+		}
+		else
+		{
+		msgbox, no crypto open
+		break
+		}
+	}
+	else
+	{
 msgbox, where my crypto bro 😡
+break
 }
+}
+
+return
+
+
 
 
 
