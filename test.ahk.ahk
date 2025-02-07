@@ -6,7 +6,7 @@ Esc::ExitApp
 
 k::
 
-msgbox, Starting
+msgbox, Starting 
 sleep 10000
 
 loop 
@@ -51,7 +51,8 @@ break
 }
 }
 
-return
+
+return	
 
 
 
