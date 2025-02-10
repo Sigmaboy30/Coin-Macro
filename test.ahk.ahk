@@ -30,7 +30,7 @@ loop
 
 	WinActivate, ahk_exe ApplicationFrameHost.exe
 	Sleep 2000
-	Send, ^v 	;pastes screenshot into logs or sender app
+	Send, ^v 	;pastes screenshot into sender app
 		Sleep 120000
 		Send,{Enter}
 		Sleep 1
