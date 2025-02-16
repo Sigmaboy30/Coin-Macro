@@ -12,6 +12,7 @@ sleep 10000
 loop 
 {
 
+
  IfWinExist, ahk_exe chrome.exe  
     {
 	
