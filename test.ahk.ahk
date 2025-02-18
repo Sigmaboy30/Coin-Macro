@@ -6,6 +6,7 @@ Esc::ExitApp
 
 k::
 
+
 msgbox, Starting 
 sleep 10000
 
