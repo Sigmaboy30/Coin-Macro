@@ -1,3 +1,4 @@
+
 SetTitleMatchMode, 2
 
 Esc::ExitApp	
